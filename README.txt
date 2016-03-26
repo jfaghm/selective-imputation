@@ -3,7 +3,7 @@ SKNN: selective imputation with KNN, KNN: unweighted mean KNN, MI: multiple impu
 
 Although any text data input is acceptable by this demo, we recommend to use the three default datasets:
 adult_data.txt, census_data.txt, and clinic_data.txt.
-Please do NOT move the file locations.
+Please do NOT change the file locations.
 Please unzip MI_R_result.zip to the current folder.
 
 ===== Command Example =====
