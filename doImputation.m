@@ -12,16 +12,13 @@ function doImputation(data_fname, data, miss_rate, rand_arr, cont_ind, method, v
     truth_arr = data_trans((row_rand-1)*col_num + col_rand)';
     
     cf_dist_bars = {...
-    [100.3645  100.5529  100.7638  100.9768  101.2705  101.6005  102.0496  102.6355  104.1455  144.6897  150.4072  159.8908  166.3221  171.8974  177.1871  182.4688  188.1682  195.0255  205.2133  305.3094],...
     [100.1493  100.7839  111.9006  141.4253  141.4734  141.6021  142.0325  147.5021  173.3152  203.3301  224.8580  245.0400  245.1799  246.2618  250.3665  265.3692  267.3366  283.3406  286.9641  361.0777],...
     [100.0508  141.4290  150.3086  173.3625  185.2698  200.8936  223.6089  244.1964  256.6413  269.0863  282.8709  299.5496  316.2283  335.9484  358.5553  374.7362  390.3366  408.3041  411.1566  430.2870]};
     switch data_fname
-        case 'clinic_data.txt'
-            my_bars = cf_dist_bars{1}; dist_bar = my_bars(15);
         case 'adult_data.txt'
-            my_bars = cf_dist_bars{2}; dist_bar = my_bars(15);
+            my_bars = cf_dist_bars{1}; dist_bar = my_bars(15);
         case 'census_data.txt'
-            my_bars = cf_dist_bars{3}; dist_bar = my_bars(15);
+            my_bars = cf_dist_bars{2}; dist_bar = my_bars(15);
         otherwise
             my_bars = []; 
             % estimate a distance bar

@@ -77,12 +77,6 @@ title(title_str);
 %cont_ind = [2 3 4];
 type_name = {'Categorical' 'Numerical'};
 switch data_fname
-    case 'clinic_data.txt'
-        attr_names = {'PFI Number','Admission Year','Admission Mon','Admission Weekday','Admission Hour',...
-            'Race','Ethnic','Age','ICD-9 Code','Insurance Type','Number of Staying Days','Zipcode'};
-        type_idx = ones(1,12);
-        type_idx(cont_ind) = 2;
-        attr_types = {type_name{type_idx}};
     case 'adult_data.txt'
         attr_names = {'Age','Work Class','Final Weight','Education','Num of Educations','Marital Status',...
             'Occupation','Relationship','Race','Gender','Capital Gains','Capital Losses','Hours Per Week',...

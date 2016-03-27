@@ -1,7 +1,8 @@
 function evaluateImputation(data_fname,cont_ind,method,varargin)
 % This function is to evaluate performance of any candidate imputation method.
-% Any text data input is acceptable, but we recommand to use the three default datasets:
-% adult_data.txt census_data.txt clinic_data.txt
+% Any text data input is acceptable, but we recommand to use the two default datasets:
+% adult_data.txt census_data.txt
+% ### Due to protect privacy, we do NOT provide clinic data and the corresponding results. ###
 % Please do NOT move their location and use particular cont_ind for the default datasets.
 % Any missing rate is acceptable, but we reccomand to use 0.01, 0.05 or 0.1,
 % because MI is only available for the three rates.
@@ -9,7 +10,6 @@ function evaluateImputation(data_fname,cont_ind,method,varargin)
 % Example:
 % evaluateImputation('adult_data.txt',[1 3 5 11 12 13],'SKNN',0.1);
 % evaluateImputation('census_data.txt',[1 3 4 6 17 18 19 25 31 37 39 40 41],'MI');
-% evaluateImputation('clinic_data.txt',[8 11],'LC',0.01);
 % evaluateImputation('xxx_data.txt',[x x x],'CF',0.01,true,[]);
 
 %-- Arguments --%
@@ -23,7 +23,6 @@ function evaluateImputation(data_fname,cont_ind,method,varargin)
 % Please use the following cont_ind for default three datasets:
 % adult_data.txt: [1 3 5 11 12 13]
 % census_data.txt: [1 3 4 6 17 18 19 25 31 37 39 40 41]
-% clinic_data.txt: [8 11]
 
 % [3] method: a string to indicate adopt method.
 % SKNN: selective imputation with KNN; MI: multiple imputation;
@@ -73,8 +72,6 @@ switch data_fname
         my_cont_ind = [1 3 5 11 12 13];
     case 'census_data.txt'
         my_cont_ind = [1 3 4 6 17 18 19 25 31 37 39 40 41];
-    case 'clinic_data.txt'
-        my_cont_ind = [8 11];
     otherwise
         my_cont_ind = [];
 end
@@ -122,7 +119,7 @@ if strcmp(method,'CF')
             get_bars_tag = false;
         end
     elseif(isempty(cf_bars))
-        fprintf('By default get_bins_tag = false\n');
+        fprintf('By default get_bars_tag = false\n');
     end
 
 end

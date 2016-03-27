@@ -4,8 +4,6 @@ function [imput_arr, truth_arr, conf_arr, rand_arr] = doMI(data_fname, miss_rate
     truth_arr = [];
     conf_arr = [];
     switch data_fname
-        case 'clinic_data.txt'
-            R_root = 'MI_R_result/clinic/clinic_data_';
         case 'adult_data.txt'
             R_root = 'MI_R_result/adult/adult_data_';
         case 'census_data.txt'
